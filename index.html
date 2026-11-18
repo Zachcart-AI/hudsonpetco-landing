@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Hudson Pet Co. Neighborhood pet supplies at 250 Hudson St, New York, since 2014. Delivery in 30 to 45 minutes, pickup in about an hour.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Hudson Pet Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a neighborhood shop sign. Ink-green street band, cool paper body, brass for the "open" moments, brick for prices on sale. */
+:root{
+  --paper:#EEF1EC; --surface:#FFFFFF; --ink:#14231F; --muted:#56635E; --line:#D4DAD4;
+  --green:#1B3B34; --green-2:#24504A; --on-green:#EEF3EE; --on-green-muted:#AFC2BB;
+  --brass:#E2AE3A; --brick:#A8432C; --ok:#2E7D53;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --gutter-l:max(16px,env(safe-area-inset-left,0px)); --gutter-r:max(16px,env(safe-area-inset-right,0px));
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F1715; --surface:#16211E; --ink:#E7EDE9; --muted:#9AA8A2; --line:#2A3833;
+  --green:#132B26; --green-2:#1C3B35; --on-green:#E7EFEA; --on-green-muted:#93ABA3;
+  --brass:#EDBE52; --brick:#E07A5F; --ok:#5DBB88; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0F1715; --surface:#16211E; --ink:#E7EDE9; --muted:#9AA8A2; --line:#2A3833;
+  --green:#132B26; --green-2:#1C3B35; --on-green:#E7EFEA; --on-green-muted:#93ABA3;
+  --brass:#EDBE52; --brick:#E07A5F; --ok:#5DBB88; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--green)}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1200px;margin:0 auto;padding-left:var(--gutter-l);padding-right:var(--gutter-r)}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px;border-radius:6px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:var(--body);transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-brass{background:var(--brass);color:#1A1405}
+.btn-ghost{border-color:currentColor;color:inherit;background:transparent}
+.btn svg{width:18px;height:18px}
+
+/* Header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--green);color:var(--on-green)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--brass);display:grid;place-items:center;color:#1A1405;flex:none}
+.logo-mark svg{width:24px;height:24px}
+.logo b{font-family:var(--display);font-size:21px;font-weight:800;letter-spacing:-.01em;display:block;line-height:1}
+.logo small{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--on-green-muted);text-transform:uppercase}
+nav.links{display:flex;gap:26px;font-weight:500;font-size:15px}
+nav.links a{text-decoration:none;color:var(--on-green-muted)}
+nav.links a:hover{color:var(--on-green)}
+.top .btn{padding:10px 18px;font-size:15px}
+@media (max-width:860px){nav.links{display:none}}
+@media (max-width:420px){.logo small{display:none}.top .btn{padding:9px 14px}}
+
+/* Hero */
+.hero{background:var(--green);color:var(--on-green);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:end;padding-block:56px 0}
+.hero-copy{padding-bottom:72px;min-width:0}
+.status{display:inline-flex;align-items:center;gap:10px;background:var(--green-2);border-radius:999px;padding:7px 14px 7px 10px;font-size:14px;font-weight:500}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 4px color-mix(in srgb,var(--brass) 30%,transparent)}
+.status.closed .dot{background:var(--on-green-muted);box-shadow:none}
+.hero h1{font-size:clamp(46px,7.4vw,96px);font-weight:800;margin:26px 0 22px}
+.hero h1 em{font-style:normal;color:var(--brass)}
+.hero .lede{font-size:clamp(18px,2vw,21px);color:var(--on-green-muted);max-width:30em}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .proof{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:38px;font-size:15px;color:var(--on-green-muted)}
+.stars{color:var(--brass);letter-spacing:2px;font-size:16px}
+.proof strong{color:var(--on-green)}
+.hero-photo{position:relative;align-self:stretch;min-height:520px}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:55% 60%;border-radius:220px 220px 0 0}
+.tag{position:absolute;left:-28px;bottom:48px;background:var(--surface);color:var(--ink);border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px -12px rgba(0,0,0,.45);display:flex;gap:14px;align-items:center;max-width:270px}
+.tag .ico{width:44px;height:44px;border-radius:12px;background:var(--brass);display:grid;place-items:center;flex:none;color:#1A1405}
+.tag .ico svg{width:24px;height:24px}
+.tag b{display:block;font-size:15px}
+.tag span{font-size:13.5px;color:var(--muted)}
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr;gap:0;padding-top:40px}
+  .hero-copy{padding-bottom:40px}
+  .hero-photo{min-height:380px;margin-inline:calc(-1 * var(--gutter-l)) calc(-1 * var(--gutter-r))}
+  .hero-photo img{border-radius:160px 160px 0 0}
+  .tag{left:16px;bottom:20px}
+}
+
+/* Service strip */
+.strip{background:var(--brass);color:#1A1405}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-block:0}
+.strip div{padding:22px 18px;display:flex;gap:12px;align-items:center;min-width:0}
+.strip div+div{border-left:1px solid rgba(26,20,5,.22)}
+.strip svg{width:26px;height:26px;flex:none}
+.strip b{display:block;font-size:16px;line-height:1.2}
+.strip span{font-size:14px;opacity:.78}
+@media (max-width:900px){.strip .wrap{grid-template-columns:1fr 1fr}.strip div:nth-child(3){border-left:0}.strip div:nth-child(n+3){border-top:1px solid rgba(26,20,5,.22)}}
+@media (max-width:480px){.strip .wrap{grid-template-columns:1fr}.strip div+div{border-left:0;border-top:1px solid rgba(26,20,5,.22)}}
+
+/* Sections */
+section.block{padding-block:96px}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.head h2{font-size:clamp(36px,5vw,60px);font-weight:800;max-width:14em}
+.head p{color:var(--muted);max-width:30em}
+.kicker{color:var(--brick);margin-bottom:14px;display:block}
+@media (max-width:600px){section.block{padding-block:64px}}
+
+/* Aisles */
+.aisles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.aisle{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4;max-width:100%;color:#fff;text-decoration:none;background:var(--green)}
+.aisle img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.aisle:hover img{transform:scale(1.04)}
+.aisle::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(8,18,15,.82))}
+.aisle .lbl{position:absolute;left:18px;right:18px;bottom:16px;z-index:1}
+.aisle h3{font-size:25px;font-weight:700}
+.aisle .lbl span{font-size:14px;opacity:.85}
+.more-aisles{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;padding:10px 16px;border:1px solid var(--line);background:var(--surface);border-radius:999px;font-size:15px;font-weight:500;text-decoration:none}
+.chip:hover{border-color:var(--ink)}
+@media (max-width:900px){.aisles{grid-template-columns:1fr 1fr}}
+
+/* Picks */
+.picks-band{background:var(--surface);border-block:1px solid var(--line)}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.pick{display:flex;flex-direction:column;gap:6px;padding:26px 24px 28px;border-bottom:1px solid var(--line);text-decoration:none;min-width:0;transition:background .15s}
+.pick:hover{background:color-mix(in srgb,var(--paper) 70%,transparent)}
+.pick:not(:nth-child(3n)){border-right:1px solid var(--line)}
+.pick .brand{color:var(--muted)}
+.pick h3{font-family:var(--body);font-weight:600;font-size:18px;letter-spacing:0;line-height:1.3;flex:1}
+.price{display:flex;align-items:baseline;gap:10px;margin-top:10px;font-variant-numeric:tabular-nums}
+.price b{font-family:var(--display);font-size:28px;font-weight:700}
+.price s{color:var(--muted);font-size:15px}
+.badge{display:inline-flex;align-self:flex-start;font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:6px}
+.badge.sale{background:color-mix(in srgb,var(--brick) 14%,transparent);color:var(--brick)}
+.badge.low{background:color-mix(in srgb,var(--brass) 22%,transparent);color:var(--ink)}
+.picks-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:32px;color:var(--muted)}
+.picks-foot .btn{background:var(--green);color:var(--on-green)}
+@media (max-width:900px){.picks{grid-template-columns:1fr 1fr}.pick:not(:nth-child(3n)){border-right:0}.pick:nth-child(odd){border-right:1px solid var(--line)}}
+@media (max-width:560px){.picks{grid-template-columns:1fr}.pick:nth-child(odd){border-right:0}}
+
+/* Why */
+.why{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why-photos{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;min-width:0}
+.why-photos img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+.why-photos .tall{grid-row:span 2;aspect-ratio:3/4.4}
+.why-photos .sq{aspect-ratio:1}
+.points{display:grid;gap:26px;margin-top:34px}
+.point{display:grid;grid-template-columns:48px 1fr;gap:16px}
+.point .ico{width:48px;height:48px;border-radius:14px;background:var(--green);color:var(--brass);display:grid;place-items:center}
+.point .ico svg{width:24px;height:24px}
+.point b{display:block;font-size:18px;margin-bottom:2px}
+.point p{color:var(--muted);font-size:16px}
+@media (max-width:900px){.why{grid-template-columns:1fr;gap:40px}}
+
+/* Brands */
+.brands{display:flex;flex-wrap:wrap;gap:14px 34px;justify-content:center;padding-block:44px;border-top:1px solid var(--line);color:var(--muted);font-family:var(--display);font-weight:700;font-size:clamp(19px,2.2vw,25px);letter-spacing:-.01em}
+.brands span{white-space:nowrap}
+
+/* Visit */
+.visit{background:var(--green);color:var(--on-green)}
+.visit .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;padding-block:96px;align-items:center}
+.visit h2{font-size:clamp(38px,5.4vw,66px);font-weight:800}
+.visit .kicker{color:var(--brass)}
+.visit-lede{color:var(--on-green-muted);margin-top:18px;max-width:28em}
+.facts{display:grid;gap:0;margin-top:34px;border-top:1px solid rgba(255,255,255,.14)}
+.fact{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:center;padding-block:18px;border-bottom:1px solid rgba(255,255,255,.14)}
+.fact .mono{color:var(--on-green-muted)}
+.fact .val{font-size:19px;font-weight:600;min-width:0}
+.fact .val small{display:block;font-size:14px;font-weight:400;color:var(--on-green-muted)}
+.copy{background:var(--green-2);color:var(--on-green);border:0;border-radius:999px;padding:8px 14px;font:500 14px var(--body);cursor:pointer}
+.copy:hover{background:color-mix(in srgb,var(--green-2) 70%,#fff 10%)}
+.hours{font-variant-numeric:tabular-nums}
+.visit .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.visit-photos{position:relative;min-width:0}
+.visit-photos .main{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px}
+.visit-photos .inset{position:absolute;right:-18px;bottom:-30px;width:46%;aspect-ratio:1;object-fit:cover;border-radius:20px;border:6px solid var(--green)}
+.visit-photos .cap{position:absolute;left:18px;top:18px;background:rgba(10,22,19,.72);backdrop-filter:blur(6px);color:#EEF3EE;padding:8px 12px;border-radius:10px}
+@media (max-width:900px){.visit .wrap{grid-template-columns:1fr;padding-block:64px}.visit-photos{order:-1}.visit-photos .inset{right:12px;bottom:-24px}}
+@media (max-width:480px){.fact{grid-template-columns:1fr auto}.fact .mono{grid-column:1/-1}}
+
+/* Delivery band */
+.deliver{position:relative;overflow:hidden;color:#fff;background:var(--green)}
+.deliver img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.deliver::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,20,17,.86) 0%,rgba(8,20,17,.55) 55%,rgba(8,20,17,.15));z-index:1}
+.deliver .wrap{position:relative;z-index:2;padding-block:110px}
+.deliver h2{font-size:clamp(36px,5vw,62px);font-weight:800;max-width:11em}
+.deliver p{max-width:30em;margin-top:18px;color:#D9E4DF;font-size:18px}
+.deliver .ctas{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.deliver .mono{color:var(--brass)}
+
+footer{padding-block:40px 48px;color:var(--muted);font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy > *{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero-copy > *:nth-child(2){animation-delay:.06s}
+  .hero-copy > *:nth-child(3){animation-delay:.12s}
+  .hero-copy > *:nth-child(4){animation-delay:.18s}
+  .hero-copy > *:nth-child(5){animation-delay:.24s}
+  .tag{animation:rise .7s .35s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes rise{from{transform:translateY(14px);opacity:.001}to{transform:none;opacity:1}}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Hudson Pet Co. home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><ellipse cx="7" cy="8.2" rx="1.9" ry="2.4"/><ellipse cx="12" cy="6.2" rx="1.9" ry="2.5"/><ellipse cx="17" cy="8.2" rx="1.9" ry="2.4"/><ellipse cx="4.6" cy="12.8" rx="1.6" ry="2"/><path d="M12 11c-3 0-6 4.2-6 6.6 0 1.6 1.3 2.4 2.8 2.4 1.3 0 2-.6 3.2-.6s1.9.6 3.2.6c1.5 0 2.8-.8 2.8-2.4C18 15.2 15 11 12 11z"/><ellipse cx="19.4" cy="12.8" rx="1.6" ry="2"/></svg>
+      </span>
+      <span><b>Hudson Pet Co.</b><small>250 Hudson St · NYC</small></span>
+    </a>
+    <nav class="links" aria-label="Sections">
+      <a href="#aisles">Shop</a>
+      <a href="#picks">This week</a>
+      <a href="#why">Why us</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <a class="btn btn-brass" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Shop online</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="status" id="status"><span class="dot" aria-hidden="true"></span><span id="status-text">Open daily · 8:00 AM to 9:00 PM</span></span>
+        <h1>Your pet's corner shop on <em>Hudson Street.</em></h1>
+        <p class="lede">Food, treats, toys, grooming and everyday care for dogs, cats and fish. Picked by people who know your neighborhood, and delivered to your door in under an hour.</p>
+        <div class="ctas">
+          <a class="btn btn-brass" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Shop 3,000+ items
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#visit">Visit the store</a>
+        </div>
+        <div class="proof">
+          <span><span class="stars" aria-hidden="true">★★★★★</span> <strong>4.8</strong> from 124 reviews</span>
+          <span>Neighborhood pet supplies since 2014</span>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="img/hero.jpg" alt="A brown dog standing on the tiled floor of a pet shop, shelves of treats and toys behind it">
+        <div class="tag">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg></span>
+          <div><b>At your door in 30–45 min</b><span>Free on orders over $40</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg><span><b>Local delivery</b><span>30 to 45 minutes</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9l2-5h12l2 5M4 9h16v11H4zM9 13h6"/></svg><span><b>In-store pickup</b><span>Ready in about an hour</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c4 3 6 6 6 10a6 6 0 01-12 0c0-4 2-7 6-10z"/><path d="M12 21v-8"/></svg><span><b>Natural &amp; organic</b><span>Vet-approved selections</span></span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg><span><b>Live inventory</b><span>What you see is on the shelf</span></span></div>
+    </div>
+  </div>
+
+  <section class="block" id="aisles">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="mono kicker">11 aisles · about 3,000 items</span>
+          <h2>Walk the aisles from your couch.</h2>
+        </div>
+        <p>The same shelves you browse on Hudson Street, online with live stock. Order by noon and walk your dog to pick it up after lunch.</p>
+      </div>
+      <div class="aisles">
+        <a class="aisle" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <img src="img/nutrition.jpg" alt="Close portrait of a black dog with a gray muzzle" loading="lazy">
+          <div class="lbl"><h3>Nutrition</h3><span>Acana, Pup Above, Happy Howies</span></div>
+        </a>
+        <a class="aisle" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <img src="img/grooming.jpg" alt="A white poodle getting a trim with scissors" loading="lazy">
+          <div class="lbl"><h3>Grooming</h3><span>Brushes, shampoos, clippers</span></div>
+        </a>
+        <a class="aisle" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <img src="img/clothing.jpg" alt="A Cavalier King Charles spaniel wearing a pink raincoat" loading="lazy">
+          <div class="lbl"><h3>Clothing &amp; Accessories</h3><span>Sweaters, jackets, harnesses</span></div>
+        </a>
+        <a class="aisle" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <img src="img/catshop.jpg" alt="A tabby cat sitting on a counter in a pet shop, looking up" loading="lazy">
+          <div class="lbl"><h3>Entertainment &amp; Toys</h3><span>For the cat who runs the house</span></div>
+        </a>
+      </div>
+      <div class="more-aisles" aria-label="More aisles">
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Health &amp; Treatments</a>
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Training</a>
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Identification</a>
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Transport &amp; Leisure</a>
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Well-Being &amp; Comfort</a>
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Household Supplies</a>
+        <a class="chip" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Aquariums &amp; Supplies</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block picks-band" id="picks">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="mono kicker">On the shelf this week</span>
+          <h2>Staff picks, a few on sale.</h2>
+        </div>
+        <p>Prices from our online store. Stock moves fast on the small-batch items, so grab them while they're here.</p>
+      </div>
+      <div class="picks">
+        <a class="pick" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <span class="mono brand">Pup Above</span>
+          <h3>Frozen Gently Cooked Chicka Chicka Bow Wow, 1 lb</h3>
+          <span class="badge sale">Save 22%</span>
+          <div class="price"><b>$27.85</b><s>$35.65</s></div>
+        </a>
+        <a class="pick" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <span class="mono brand">Doggie Design</span>
+          <h3>Combed Cotton Cable Knit Sweater, Medium, Oatmeal</h3>
+          <span class="badge low">New for fall</span>
+          <div class="price"><b>$35.06</b></div>
+        </a>
+        <a class="pick" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <span class="mono brand">Acana</span>
+          <h3>Grasslands Dog Food, 6 kg</h3>
+          <span class="badge sale">Save 15%</span>
+          <div class="price"><b>$17.59</b><s>$20.76</s></div>
+        </a>
+        <a class="pick" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <span class="mono brand">Happy Howies</span>
+          <h3>4" Deli-Style Beef Sausages, case of 80</h3>
+          <span class="badge sale">Save 8%</span>
+          <div class="price"><b>$37.78</b><s>$41.18</s></div>
+        </a>
+        <a class="pick" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <span class="mono brand">RC Pets</span>
+          <h3>Adventure Kitty Harness, Black, Large</h3>
+          <span class="badge low">Cat walks, yes</span>
+          <div class="price"><b>$25.77</b></div>
+        </a>
+        <a class="pick" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">
+          <span class="mono brand">P.L.A.Y.</span>
+          <h3>90s Classic Collection Game Bone</h3>
+          <span class="badge sale">Save 8%</span>
+          <div class="price"><b>$14.87</b><s>$16.21</s></div>
+        </a>
+      </div>
+      <div class="picks-foot">
+        <span>Plus 2,980 more items, with live stock counts.</span>
+        <a class="btn" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">See the full store</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="why">
+    <div class="wrap why">
+      <div class="why-photos">
+        <img class="tall" src="img/highfive.jpg" alt="A tabby cat pressing its paw against a person's palm" loading="lazy">
+        <img class="sq" src="img/grooming.jpg" alt="" loading="lazy" style="object-position:30% 50%">
+        <img class="sq" src="img/clothing.jpg" alt="" loading="lazy" style="object-position:50% 30%">
+      </div>
+      <div>
+        <span class="mono kicker">Since 2014 on Hudson St</span>
+        <h2 style="font-size:clamp(36px,5vw,58px);font-weight:800">A neighborhood shop that knows your pet by name.</h2>
+        <div class="points">
+          <div class="point"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l4 4v8a1 1 0 01-1 1H6a1 1 0 01-1-1v-8l4-4z"/><path d="M12 12v5M9.5 14.5h5"/></svg></span><div><b>Vet-approved selections</b><p>Food and treatments chosen with veterinarians. Flea care, supplements and diets you can trust.</p></div></div>
+          <div class="point"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 3 6 6 6 10a6 6 0 01-12 0c0-4 2-7 6-10z"/><path d="M12 21v-8"/></svg></span><div><b>Natural &amp; organic first</b><p>Gently cooked frozen meals, grain-free kibble and simple-ingredient treats from small brands.</p></div></div>
+          <div class="point"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/></svg></span><div><b>Right around the corner</b><p>Delivery in 30 to 45 minutes across the neighborhood, or pickup in about an hour.</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="brands" aria-label="Brands we carry">
+        <span>Acana</span><span>Pup Above</span><span>PetSafe</span><span>Happy Howies</span><span>P.L.A.Y.</span><span>Pet Life</span><span>Bark Appeal</span><span>Doggie Design</span><span>A Tail We Could Wag</span><span>Coastal Pet</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="deliver">
+    <img src="img/crosswalk.jpg" alt="" loading="lazy">
+    <div class="wrap">
+      <span class="mono">Delivery · 30 to 45 min</span>
+      <h2 style="margin-top:14px">Out of kibble at 8 PM? We've got you.</h2>
+      <p>Free local delivery on orders over $40. We're open until 9, every day of the week.</p>
+      <div class="ctas"><a class="btn btn-brass" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Order for delivery</a></div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap">
+      <div>
+        <span class="mono kicker">Visit us</span>
+        <h2>Come say hi. Bring the dog.</h2>
+        <p class="visit-lede">Leashed friends are always welcome inside. There's a water bowl by the door and a jar of treats at the register.</p>
+        <div class="facts">
+          <div class="fact"><span class="mono">Address</span><span class="val" id="addr">250 Hudson St<small>New York, NY 10013</small></span><button class="copy" type="button" data-copy="250 Hudson St, New York, NY 10013">Copy</button></div>
+          <div class="fact"><span class="mono">Phone</span><span class="val" id="phone">(212) 555-0142</span><button class="copy" type="button" data-copy="(212) 555-0142">Copy</button></div>
+          <div class="fact"><span class="mono">Hours</span><span class="val hours">8:00 AM to 9:00 PM<small id="hours-note">Every day of the week</small></span><span></span></div>
+        </div>
+        <div class="ctas">
+          <a class="btn btn-brass" href="https://www.google.com/maps/dir/?api=1&amp;destination=250+Hudson+St,+New+York,+NY+10013" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn btn-ghost" href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Order for pickup</a>
+        </div>
+      </div>
+      <div class="visit-photos">
+        <img class="main" src="img/street.jpg" alt="A cobblestone street in lower Manhattan lined with brick buildings and fire escapes" loading="lazy" style="object-position:72% 50%">
+        <span class="cap mono">Hudson St · Lower Manhattan</span>
+        <img class="inset" src="img/window.jpg" alt="A tabby cat lounging in a shop window display" loading="lazy">
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© Hudson Pet Co. · 250 Hudson St, New York, NY 10013 · (212) 555-0142</span>
+    <nav aria-label="Footer">
+      <a href="https://hudsonpetco.zachcart.shop/" target="_blank" rel="noopener">Online store</a>
+      <a href="#visit">Hours &amp; location</a>
+      <span>Photos: Unsplash</span>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Open/closed badge, on New York time.
+  try{
+    var parts=new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",hour:"numeric",minute:"numeric",hour12:false}).formatToParts(new Date());
+    var h=+parts.find(function(p){return p.type==="hour"}).value%24, m=+parts.find(function(p){return p.type==="minute"}).value;
+    var mins=h*60+m, open=mins>=480&&mins<1260;
+    var el=document.getElementById("status"), t=document.getElementById("status-text");
+    if(open){t.textContent="Open now · Closes at 9:00 PM";}
+    else{el.classList.add("closed");t.textContent="Closed now · Opens at 8:00 AM";}
+  }catch(e){}
+  // Copy buttons.
+  document.querySelectorAll(".copy").forEach(function(b){
+    b.addEventListener("click",function(){
+      var v=b.getAttribute("data-copy");
+      var done=function(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy"},1600)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(b.previousElementSibling);var s=getSelection();s.removeAllRanges();s.addRange(r);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(done,fallback);}else{fallback();}
+    });
+  });
+})();
+</script>
+</body>
+</html>
